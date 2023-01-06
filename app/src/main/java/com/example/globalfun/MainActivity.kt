@@ -1,8 +1,10 @@
 package com.example.globalfun
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.Button
@@ -58,15 +60,24 @@ fun theLogo(){
     }
 }
 
+
 @Composable
 
 fun buttons(){
     Column() {
-        Button(onClick = { /*TODO*/ }) {
+        Button(onClick = {
+
+        }) {
 //            for sign up
+            Text(
+                text = "sign up"
+            )
         }
         Button(onClick = { /*TODO*/ }) {
 //            for log in
+            Text(
+                text = "log in"
+            )
         }
     }
 }
