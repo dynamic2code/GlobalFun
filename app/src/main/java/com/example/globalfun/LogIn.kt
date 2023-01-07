@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.TextFieldValue
@@ -51,48 +52,25 @@ fun top2() {
 
 @Composable
 fun login(){
-    Box() {
-        Column() {
-//            the full box
-            val name = remember {
-                mutableSetOf(TextFieldValue)
-            }
-            val email = remember {
-                mutableSetOf(TextFieldValue)
-            }
-            val _Password = remember {
-                mutableSetOf(TextFieldValue)
-            }
 
-            Text(
-                text = "Sign up"
-            )
-            Column() {
-//                the filling details part
-
-                Text(
-                    text = "Name"
-                )
-                TextField(
-                    value = name.value , onValueChange = {name.value = it}
-                )
-                Text(
-                    text = "Email"
-                )
-                TextField(
-                    value = email.value , onValueChange = {email.value = it}
-                )
-                Text(
-                    text = "Password"
-                )
-                TextField(
-                    value = _Password.value , onValueChange = {_Password.value = it}
-                )
-
-            }
-        }
-    }
+//    Box() {
+//        Column() {
+////            the full box
+//            Text(
+//                text = "log in"
+//            )
+//            Column() {
+////                the filling details part
+//
+//                Text(
+//                    text = "Name"
+//                )
+//
+//            }
+//        }
+//    }
 }
+
 @Composable
 fun finishButton2(){
     Button(onClick = { /*TODO*/ })

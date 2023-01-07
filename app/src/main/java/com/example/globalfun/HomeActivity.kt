@@ -20,6 +20,11 @@ class HomeActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             MainHome {
+                Column() {
+                    top3()
+                    searchHome()
+                    history()
+                }
 
             }
         }
@@ -72,6 +77,12 @@ fun history(){
 @Composable
 fun DefaultPreview4() {
     GlobalFunTheme {
-
+        MainHome {
+            Column() {
+                top3()
+                searchHome()
+                history()
+            }
+        }
     }
 }

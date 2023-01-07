@@ -20,7 +20,11 @@ class LyricsViewActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             MainLyrics() {
-
+                Column {
+                    top4()
+                    searchLyrics()
+                    lyricsSpace()
+                }
             }
         }
     }
@@ -66,5 +70,12 @@ fun lyricsSpace(){
 @Composable
 fun DefaultPreview5() {
     GlobalFunTheme {
+        MainLyrics() {
+            Column {
+                top4()
+                searchLyrics()
+                lyricsSpace()
+            }
+        }
     }
 }

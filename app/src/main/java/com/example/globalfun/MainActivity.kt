@@ -77,6 +77,7 @@ fun buttons(){
                 text = "sign up"
             )
         }
+        Text(text = "Already have an account with us? click below to log in")
         Button(onClick = {
             context.startActivity(Intent(context, LogIn::class.java))
         }) {
