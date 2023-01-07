@@ -1,5 +1,6 @@
 package com.example.globalfun
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -13,6 +14,7 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.globalfun.ui.theme.GlobalFunTheme
 
@@ -64,8 +66,10 @@ fun theLogo(){
 @Composable
 
 fun buttons(){
+    val context = LocalContext.current
     Column() {
         Button(onClick = {
+            context.startActivity(Intent(context, SignUp::class.java))
 
         }) {
 //            for sign up
@@ -73,7 +77,9 @@ fun buttons(){
                 text = "sign up"
             )
         }
-        Button(onClick = { /*TODO*/ }) {
+        Button(onClick = {
+            context.startActivity(Intent(context, LogIn::class.java))
+        }) {
 //            for log in
             Text(
                 text = "log in"
