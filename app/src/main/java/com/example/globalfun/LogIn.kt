@@ -52,23 +52,49 @@ fun top2() {
 
 @Composable
 fun login(){
+    Box() {
+        Column() {
+//            the full box
+            Text(
+                text = "Sign up"
+            )
 
-//    Box() {
-//        Column() {
-////            the full box
-//            Text(
-//                text = "log in"
-//            )
-//            Column() {
-////                the filling details part
-//
-//                Text(
-//                    text = "Name"
-//                )
-//
-//            }
-//        }
-//    }
+            Column() {
+//                the filling details part
+                val _name = remember {
+                    mutableStateOf(value = "")
+                }
+                val _email = remember {
+                    mutableStateOf(value = "")
+                }
+                val _password = remember {
+                    mutableStateOf(value = "")
+                }
+
+
+                TextField(
+
+                    value = _name.value,
+                    onValueChange = {
+                        _name.value = it
+                    }
+                )
+                TextField(
+                    value = _email.value,
+                    onValueChange ={
+                        _email.value = it
+                    }
+                )
+                TextField(
+                    value = _password.value ,
+                    onValueChange ={
+                        _password.value = it
+                    }
+                )
+
+            }
+        }
+    }
 }
 
 @Composable

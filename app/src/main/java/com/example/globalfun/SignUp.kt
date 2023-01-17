@@ -55,29 +55,48 @@ fun top() {
 
 @Composable
 fun signUp(){
+    Box() {
+        Column() {
+//            the full box
+            Text(
+                text = "Sign up"
+            )
+            Column() {
+//                the filling details part
+                val _name = remember {
+                    mutableStateOf(value = "")
+                }
+                val _email = remember {
+                    mutableStateOf(value = "")
+                }
+                val _password = remember {
+                    mutableStateOf(value = "")
+                }
 
-    val textin = remember {
-        mutableStateOf(value = "")
-    }
 
-    TextField(
-        value = textin.value,
-        onValueChange = {
-            textin.value = it
+                TextField(
+
+                    value = _name.value,
+                    onValueChange = {
+                        _name.value = it
+                    }
+                )
+                TextField(
+                    value = _email.value,
+                    onValueChange ={
+                        _email.value = it
+                    }
+                )
+                TextField(
+                    value = _password.value ,
+                    onValueChange ={
+                        _password.value = it
+                    }
+                )
+
+            }
+        }
     }
-    )
-//    Box() {
-//        Column() {
-////            the full box
-//            Text(
-//                text = "Sign up"
-//            )
-//            Column() {
-////                the filling details part
-//
-//            }
-//        }
-//    }
 }
 @Composable
 fun finishButton(){
