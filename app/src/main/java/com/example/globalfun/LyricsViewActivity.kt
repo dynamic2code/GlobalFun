@@ -11,7 +11,10 @@ import androidx.compose.material.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.globalfun.ui.theme.GlobalFunTheme
@@ -47,11 +50,17 @@ fun MainLyrics( content: @Composable () -> Unit){
 
 @Composable
 fun top4(){
-    Column(Modifier.padding(24.dp).fillMaxWidth()
+
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier.padding(24.dp).fillMaxWidth()
     ) {
         Text(
-            text = "Global Fun"
+            text = "Global Fun",
+            fontWeight = FontWeight.Bold,
+            textAlign = TextAlign.Center,
 
+//            fontFamily = fontName
         )
     }
 
@@ -61,7 +70,10 @@ fun searchLyrics(){
     val searchTerm = remember {
         mutableStateOf(value = "")
     }
-    Box() {
+    Box(
+//        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier.fillMaxWidth()
+    ) {
         Row() {
             TextField(value = searchTerm.value ,
                 onValueChange = {
@@ -73,7 +85,10 @@ fun searchLyrics(){
 }
 @Composable
 fun lyricsSpace(){
-    Column() {
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier.padding(24.dp).fillMaxWidth()
+    ) {
 //        for every verse
         Text(text = "lyrics")
         Text(text = "translation")
