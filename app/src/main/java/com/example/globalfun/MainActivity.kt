@@ -81,7 +81,10 @@ fun theLogo(){
 
 fun buttons(){
     val context = LocalContext.current
-    Column() {
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier.padding(24.dp).fillMaxWidth()
+    ) {
         Button(onClick = {
             context.startActivity(Intent(context, SignUp::class.java))
 

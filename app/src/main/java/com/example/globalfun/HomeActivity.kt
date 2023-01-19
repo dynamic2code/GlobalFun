@@ -51,13 +51,13 @@ fun top3(){
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier.padding(24.dp).fillMaxWidth()
     ) {
-
+        Text(
+            text = "Global Fun",
+            fontWeight = FontWeight.Bold,
+            textAlign = TextAlign.Center,
+        )
     }
-    Text(
-        text = "Global Fun",
-        fontWeight = FontWeight.Bold,
-        textAlign = TextAlign.Center,
-    )
+
 }
 @Composable
 fun searchHome(){
