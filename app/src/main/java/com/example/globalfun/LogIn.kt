@@ -49,7 +49,9 @@ fun mainLogin( content: @Composable () -> Unit){
 fun top2() {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier.padding(24.dp).fillMaxWidth()
+        modifier = Modifier
+            .padding(24.dp)
+            .fillMaxWidth()
     ) {
         Text(
             text = "Global Fun",
@@ -63,7 +65,12 @@ fun top2() {
 @Composable
 fun login(){
     Box() {
-        Column() {
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier
+                .padding(24.dp)
+                .fillMaxWidth()
+        ) {
 //            the full box
             Text(
                 text = "Sign up"
@@ -109,12 +116,18 @@ fun login(){
 
 @Composable
 fun finishButton2(){
-    Button(onClick = { /*TODO*/ })
-    {
-        Text(
-            text = "Finish"
-        )
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier.padding(24.dp).fillMaxWidth()
+    ) {
+        Button(onClick = { /*TODO*/ })
+        {
+            Text(
+                text = "Finish"
+            )
+        }
     }
+
 }
 
 @Preview(showBackground = true)

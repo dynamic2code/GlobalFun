@@ -25,7 +25,9 @@ class SignUp : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             main (){
-                Column {
+                Column (
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                        ){
                     top()
                     signUp()
                     finishButton()
@@ -52,7 +54,9 @@ fun main( content: @Composable () -> Unit){
 fun top() {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier.padding(24.dp).fillMaxWidth()
+        modifier = Modifier
+            .padding(24.dp)
+            .fillMaxWidth()
     ) {
         Text(
             text = "Global Fun",
@@ -65,8 +69,13 @@ fun top() {
 
 @Composable
 fun signUp(){
-    Box() {
-        Column() {
+    Box(
+
+    ) {
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier.fillMaxWidth().padding(24.dp)
+        ) {
 //            the full box
             Text(
                 text = "Sign up"
@@ -110,12 +119,18 @@ fun signUp(){
 }
 @Composable
 fun finishButton(){
-    Button(onClick = { /*TODO*/ })
-    {
-        Text(
-            text = "Finish"
-        )
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier.fillMaxWidth()
+    ) {
+        Button(onClick = { /*TODO*/ })
+        {
+            Text(
+                text = "Finish"
+            )
+        }
     }
+
 }
 
 @Preview(showBackground = true)
