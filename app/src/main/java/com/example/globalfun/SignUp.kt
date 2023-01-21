@@ -12,6 +12,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.TextFieldValue
@@ -69,16 +70,22 @@ fun top() {
 
 @Composable
 fun signUp(){
-    Box(
-
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(24.dp)
     ) {
-        Column(
-            horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier.fillMaxWidth().padding(24.dp)
+        Box(
+            modifier = Modifier
+                .width(300.dp)
+                .height(400.dp)
+                .background(Color.LightGray).padding(30.dp)
         ) {
-//            the full box
+
             Text(
                 text = "Sign up"
+//                modifier = Modifier.align()
             )
             Column() {
 //                the filling details part
@@ -112,9 +119,9 @@ fun signUp(){
                         _password.value = it
                     }
                 )
-
             }
-        }
+    }
+
     }
 }
 @Composable

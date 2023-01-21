@@ -13,6 +13,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -53,10 +54,13 @@ fun top4(){
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier.padding(24.dp).fillMaxWidth()
+        modifier = Modifier
+            .padding(24.dp)
+            .fillMaxWidth()
     ) {
         Text(
             text = "Global Fun",
+            fontFamily = FontFamily.Serif,
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Center,
 
@@ -70,24 +74,29 @@ fun searchLyrics(){
     val searchTerm = remember {
         mutableStateOf(value = "")
     }
-    Box(
-//        horizontalAlignment = Alignment.CenterHorizontally,
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier.fillMaxWidth()
     ) {
-        Row() {
-            TextField(value = searchTerm.value ,
-                onValueChange = {
-                    searchTerm.value = it
-                })
-        }
+        Box() {
+            Row() {
+                TextField(value = searchTerm.value ,
+                    onValueChange = {
+                        searchTerm.value = it
+                    })
+            }
 
+        }
     }
+
 }
 @Composable
 fun lyricsSpace(){
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier.padding(24.dp).fillMaxWidth()
+        modifier = Modifier
+            .padding(24.dp)
+            .fillMaxWidth()
     ) {
 //        for every verse
         Text(text = "lyrics")
