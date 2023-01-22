@@ -80,45 +80,53 @@ fun signUp(){
             modifier = Modifier
                 .width(300.dp)
                 .height(400.dp)
-                .background(Color.LightGray).padding(30.dp)
+                .background(Color.LightGray)
+                .padding(30.dp)
         ) {
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = Modifier.fillMaxWidth()
+            ) {
 
-            Text(
-                text = "Sign up"
+                Text(
+                    text = "Sign up"
 //                modifier = Modifier.align()
-            )
-            Column() {
+                )
+                Column() {
 //                the filling details part
-                val _name = remember {
-                    mutableStateOf(value = "")
-                }
-                val _email = remember {
-                    mutableStateOf(value = "")
-                }
-                val _password = remember {
-                    mutableStateOf(value = "")
-                }
+                    val _name = remember {
+                        mutableStateOf(value = "")
+                    }
+                    val _email = remember {
+                        mutableStateOf(value = "")
+                    }
+                    val _password = remember {
+                        mutableStateOf(value = "")
+                    }
 
 
-                TextField(
+                    TextField(
 
-                    value = _name.value,
-                    onValueChange = {
-                        _name.value = it
-                    }
-                )
-                TextField(
-                    value = _email.value,
-                    onValueChange ={
-                        _email.value = it
-                    }
-                )
-                TextField(
-                    value = _password.value ,
-                    onValueChange ={
-                        _password.value = it
-                    }
-                )
+                        value = _name.value,
+                        onValueChange = {
+                            _name.value = it
+                        }
+                    )
+                    TextField(
+                        value = _email.value,
+                        onValueChange ={
+                            _email.value = it
+                        }
+                    )
+                    TextField(
+                        value = _password.value ,
+                        onValueChange ={
+                            _password.value = it
+                        }
+                    )
+
+            }
+
             }
     }
 
