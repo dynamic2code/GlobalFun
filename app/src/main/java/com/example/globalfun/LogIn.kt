@@ -3,6 +3,7 @@ package com.example.globalfun
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
@@ -10,6 +11,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextAlign
@@ -64,61 +66,74 @@ fun top2() {
 
 @Composable
 fun login(){
-    Box() {
-        Column(
-            horizontalAlignment = Alignment.CenterHorizontally,
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier.fillMaxWidth()
+    ) {
+        Box(
             modifier = Modifier
-                .padding(24.dp)
-                .fillMaxWidth()
+                .width(300.dp)
+                .height(400.dp)
+                .background(Color.LightGray).padding(30.dp)
         ) {
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = Modifier
+                    .padding(24.dp)
+                    .fillMaxWidth()
+            ) {
 //            the full box
-            Text(
-                text = "Sign up"
-            )
+                Text(
+                    text = "Sign up"
+                )
 
-            Column() {
+                Column() {
 //                the filling details part
-                val _name = remember {
-                    mutableStateOf(value = "")
-                }
-                val _email = remember {
-                    mutableStateOf(value = "")
-                }
-                val _password = remember {
-                    mutableStateOf(value = "")
-                }
-
-
-                TextField(
-
-                    value = _name.value,
-                    onValueChange = {
-                        _name.value = it
+                    val _name = remember {
+                        mutableStateOf(value = "")
                     }
-                )
-                TextField(
-                    value = _email.value,
-                    onValueChange ={
-                        _email.value = it
+                    val _email = remember {
+                        mutableStateOf(value = "")
                     }
-                )
-                TextField(
-                    value = _password.value ,
-                    onValueChange ={
-                        _password.value = it
+                    val _password = remember {
+                        mutableStateOf(value = "")
                     }
-                )
 
+
+                    TextField(
+
+                        value = _name.value,
+                        onValueChange = {
+                            _name.value = it
+                        }
+                    )
+                    TextField(
+                        value = _email.value,
+                        onValueChange ={
+                            _email.value = it
+                        }
+                    )
+                    TextField(
+                        value = _password.value ,
+                        onValueChange ={
+                            _password.value = it
+                        }
+                    )
+
+                }
             }
         }
     }
+
 }
 
 @Composable
 fun finishButton2(){
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier.padding(24.dp).fillMaxWidth()
+        modifier = Modifier
+            .padding(24.dp)
+            .fillMaxWidth()
     ) {
         Button(onClick = { /*TODO*/ })
         {
