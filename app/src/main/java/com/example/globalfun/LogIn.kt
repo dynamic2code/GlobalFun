@@ -154,6 +154,7 @@ fun login(){
                     )
 
                 }
+
             }
         }
     }
@@ -164,7 +165,7 @@ fun login(){
 fun finishButton2(){
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
-//        verticalArrangement = Arrangement.Bottom,
+        verticalArrangement = Arrangement.Center,
         modifier = Modifier
             .padding(24.dp)
             .fillMaxWidth()
