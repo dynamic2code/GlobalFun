@@ -17,6 +17,7 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.globalfun.ui.theme.GlobalFunTheme
 
 class LogIn : ComponentActivity() {
@@ -59,6 +60,7 @@ fun top2() {
             text = "Global Fun",
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Center,
+            fontSize = 24.sp
         )
     }
 
@@ -72,9 +74,9 @@ fun login(){
     ) {
         Box(
             modifier = Modifier
-                .width(300.dp)
-                .height(400.dp)
-                .background(Color.LightGray).padding(30.dp)
+                .width(308.dp)
+                .height(319.dp)
+                .background(Color.LightGray)
         ) {
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
@@ -84,10 +86,17 @@ fun login(){
             ) {
 //            the full box
                 Text(
-                    text = "Sign up"
+                    text = "Log in",
+                    fontSize = 24.sp,
+//                    modifier = Modifier.padding(10.dp)
                 )
 
-                Column() {
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+
+                ) {
 //                the filling details part
                     val _name = remember {
                         mutableStateOf(value = "")
@@ -105,19 +114,43 @@ fun login(){
                         value = _name.value,
                         onValueChange = {
                             _name.value = it
-                        }
+                        },
+                        placeholder = {
+                            Text("Name",
+                                fontSize = 17.sp,
+                                fontWeight = FontWeight.SemiBold,
+                            )
+                        },
+                        colors = TextFieldDefaults.textFieldColors(backgroundColor = Color.LightGray)
+
                     )
                     TextField(
                         value = _email.value,
                         onValueChange ={
                             _email.value = it
-                        }
+                        },
+                        placeholder = {
+                            Text("Email",
+                                fontSize = 17.sp,
+                                fontWeight = FontWeight.SemiBold,
+                            )
+                        },
+                        colors = TextFieldDefaults.textFieldColors(backgroundColor = Color.LightGray)
+
                     )
                     TextField(
                         value = _password.value ,
                         onValueChange ={
                             _password.value = it
-                        }
+                        },
+                        placeholder = {
+                            Text("Password",
+                                fontSize = 17.sp,
+                                fontWeight = FontWeight.SemiBold,
+                            )
+                        },
+                        colors = TextFieldDefaults.textFieldColors(backgroundColor = Color.LightGray)
+
                     )
 
                 }
@@ -131,14 +164,24 @@ fun login(){
 fun finishButton2(){
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
+//        verticalArrangement = Arrangement.Bottom,
         modifier = Modifier
             .padding(24.dp)
             .fillMaxWidth()
+
     ) {
-        Button(onClick = { /*TODO*/ })
+        Button(onClick = { /*TODO*/ },
+            colors= ButtonDefaults.buttonColors(backgroundColor = Color.LightGray),
+            modifier = Modifier
+                .height(44.dp)
+                .width(161.dp)
+        )
         {
             Text(
-                text = "Finish"
+                text = "Finish",
+//                color = Color.White,
+                fontSize = 24.sp
+
             )
         }
     }
