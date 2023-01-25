@@ -84,7 +84,8 @@ fun signUp(){
             modifier = Modifier
                 .width(308.dp)
                 .height(319.dp)
-//                .background(Color.LightGray).clip(RoundedCornerShape())
+                .background(Color.LightGray)
+//              .clip(RoundedCornerShape())
 //                .padding(30.dp)
         ) {
             Column(
