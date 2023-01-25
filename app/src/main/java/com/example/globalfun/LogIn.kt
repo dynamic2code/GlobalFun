@@ -62,6 +62,7 @@ fun top2() {
             textAlign = TextAlign.Center,
             fontSize = 24.sp
         )
+        Spacer(modifier = Modifier.height(150.dp))
     }
 
 }
@@ -157,6 +158,7 @@ fun login(){
 
             }
         }
+        Spacer(modifier = Modifier.height(40.dp))
     }
 
 }
