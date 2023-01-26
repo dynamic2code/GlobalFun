@@ -6,22 +6,18 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material.Button
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.foundation.layout.*
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.globalfun.ui.theme.GlobalFunTheme
 
 class MainActivity : ComponentActivity() {
@@ -30,9 +26,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             MainApp(){
                 Column {
-                    theLogo()
-                    buttons()
-                    objective()
+                    TheLogo()
+                    Buttons()
+                    Objective()
                 }
             }
         }
@@ -52,26 +48,30 @@ fun MainApp( content: @Composable () -> Unit){
 
 }
 
+//@Composable
+//fun Greeting(name: String) {
+//    Text(text = "Hello $name!")
+//}
 @Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-@Composable
-fun theLogo(){
+fun TheLogo(){
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier.padding(24.dp).fillMaxWidth()
+        modifier = Modifier
+            .padding(24.dp)
+            .fillMaxWidth()
     ) {
-
+        Spacer(modifier = Modifier.height(150.dp))
         Text(
             text = "Global Fun",
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Center,
+            fontSize = 50.sp
         )
         Text(
             text = "Appreciate the Art",
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Center,
+            fontSize = 24.sp
         )
     }
 }
@@ -79,37 +79,58 @@ fun theLogo(){
 
 @Composable
 
-fun buttons(){
+fun Buttons(){
     val context = LocalContext.current
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier.padding(24.dp).fillMaxWidth()
+        modifier = Modifier
+            .padding(24.dp)
+            .fillMaxWidth()
     ) {
         Button(onClick = {
             context.startActivity(Intent(context, SignUp::class.java))
 
-        }) {
+        },
+            colors= ButtonDefaults.buttonColors(backgroundColor = Color.LightGray),
+            modifier = Modifier
+                .height(44.dp)
+                .width(161.dp)
+        ) {
 //            for sign up
             Text(
-                text = "sign up"
+                text = "sign up",
+                fontSize = 24.sp,
             )
         }
+        Spacer(modifier = Modifier.height(150.dp))
         Text(text = "Already have an account with us? click below to log in")
         Button(onClick = {
             context.startActivity(Intent(context, LogIn::class.java))
-        }) {
+        },
+            colors= ButtonDefaults.buttonColors(backgroundColor = Color.LightGray),
+            modifier = Modifier
+                .height(44.dp)
+                .width(161.dp)
+        ) {
 //            for log in
             Text(
-                text = "log in"
+                text = "log in",
+                fontSize = 24.sp,
             )
         }
     }
 }
 @Composable
-fun objective(){
-    Text(
-        text = "We help you enjoy all music in the language you know and love"
-    )
+fun Objective(){
+    Column(
+        verticalArrangement = Arrangement.Bottom
+    ) {
+        Text(
+            text = "We help you enjoy all music in the language you know and love",
+
+        )
+    }
+
 }
 
 @Preview(showBackground = true)
@@ -118,9 +139,9 @@ fun DefaultPreview() {
     MainApp(){
 
         Column {
-            theLogo()
-            buttons()
-            objective()
+            TheLogo()
+            Buttons()
+            Objective()
         }
     }
 }
