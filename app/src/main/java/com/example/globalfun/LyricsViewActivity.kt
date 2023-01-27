@@ -18,6 +18,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.globalfun.ui.theme.GlobalFunTheme
 
 class LyricsViewActivity : ComponentActivity() {
@@ -63,6 +64,7 @@ fun Top4(){
             fontFamily = FontFamily.Serif,
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Center,
+            fontSize = 24.sp
 
 //            fontFamily = fontName
         )
@@ -83,7 +85,15 @@ fun SearchLyrics(){
                 TextField(value = searchTerm.value ,
                     onValueChange = {
                         searchTerm.value = it
-                    })
+                    },
+                    placeholder = {
+                        Text("search",
+                            fontSize = 17.sp,
+                            fontWeight = FontWeight.SemiBold,
+                        )
+                    },
+                    modifier = Modifier
+                )
             }
 
         }
@@ -95,12 +105,21 @@ fun LyricsSpace(){
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
-            .padding(24.dp)
+            .padding(50.dp)
             .fillMaxWidth()
     ) {
 //        for every verse
-        Text(text = "lyrics")
-        Text(text = "translation")
+        Text(text = "Spanish",
+            fontFamily = FontFamily.Serif,
+            fontWeight = FontWeight.Bold,
+        )
+        Text(text = "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.")
+        Spacer(modifier = Modifier.height(40.dp))
+        Text(text = "English",
+            fontFamily = FontFamily.Serif,
+            fontWeight = FontWeight.Bold,
+        )
+        Text(text = "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.")
     }
 }
 @Preview(showBackground = true)
