@@ -26,9 +26,9 @@ class LyricsViewActivity : ComponentActivity() {
         setContent {
             MainLyrics() {
                 Column {
-                    top4()
-                    searchLyrics()
-                    lyricsSpace()
+                    Top4()
+                    SearchLyrics()
+                    LyricsSpace()
                 }
             }
         }
@@ -50,7 +50,7 @@ fun MainLyrics( content: @Composable () -> Unit){
 }
 
 @Composable
-fun top4(){
+fun Top4(){
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -70,7 +70,7 @@ fun top4(){
 
 }
 @Composable
-fun searchLyrics(){
+fun SearchLyrics(){
     val searchTerm = remember {
         mutableStateOf(value = "")
     }
@@ -91,7 +91,7 @@ fun searchLyrics(){
 
 }
 @Composable
-fun lyricsSpace(){
+fun LyricsSpace(){
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
@@ -109,9 +109,9 @@ fun DefaultPreview5() {
     GlobalFunTheme {
         MainLyrics() {
             Column {
-                top4()
-                searchLyrics()
-                lyricsSpace()
+                Top4()
+                SearchLyrics()
+                LyricsSpace()
             }
         }
     }
