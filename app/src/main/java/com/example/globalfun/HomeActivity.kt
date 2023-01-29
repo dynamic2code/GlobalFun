@@ -99,7 +99,6 @@ fun history(){
         Text(text = "History",
             modifier = Modifier.padding(24.dp),
             fontWeight = FontWeight.Bold,
-
         )
     }
     Column(
