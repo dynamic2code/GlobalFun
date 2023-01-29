@@ -96,15 +96,23 @@ fun searchHome(){
 @Composable
 fun history(){
     Column() {
-        Text(text = "History")
+        Text(text = "History",
+            modifier = Modifier.padding(24.dp),
+            fontWeight = FontWeight.Bold,
+        )
+    }
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier.fillMaxWidth()
+    ) {
         Column() {
             Row() {
-                Card(
+                Box(
                     modifier = Modifier
                         .width(308.dp)
                         .height(319.dp)
                         .background(Color.LightGray)
-                ) {
+                ){
                     
                 }
             }
