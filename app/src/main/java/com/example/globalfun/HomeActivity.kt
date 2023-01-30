@@ -12,6 +12,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -25,9 +26,9 @@ class HomeActivity : ComponentActivity() {
         setContent {
             MainHome {
                 Column() {
-                    top3()
-                    searchHome()
-                    history()
+                    Top3()
+                    SearchHome()
+                    History()
                 }
 
             }
@@ -49,7 +50,7 @@ fun MainHome( content: @Composable () -> Unit){
 
 }
 @Composable
-fun top3(){
+fun Top3(){
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
@@ -65,7 +66,7 @@ fun top3(){
 
 }
 @Composable
-fun searchHome(){
+fun SearchHome(){
     val searchTerm = remember {
         mutableStateOf(value = "")
     }
@@ -94,7 +95,7 @@ fun searchHome(){
 }
 
 @Composable
-fun history(){
+fun History(){
     Column() {
         Text(text = "History",
             modifier = Modifier.padding(24.dp),
@@ -102,16 +103,19 @@ fun history(){
         )
     }
     Column(
-        horizontalAlignment = Alignment.CenterHorizontally,
+//        horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier.fillMaxWidth()
     ) {
         Column() {
-            Row() {
+            Row(
+                modifier = Modifier.padding(24.dp)
+            ) {
                 Box(
                     modifier = Modifier
-                        .width(308.dp)
-                        .height(319.dp)
+                        .width((LocalConfiguration.current.screenHeightDp * 0.2f).dp)
+                        .height((LocalConfiguration.current.screenHeightDp * 0.2f).dp)
                         .background(Color.LightGray)
+
                 ){
                     
                 }
@@ -126,9 +130,9 @@ fun DefaultPreview4() {
     GlobalFunTheme {
         MainHome {
             Column() {
-                top3()
-                searchHome()
-                history()
+                Top3()
+                SearchHome()
+                History()
             }
         }
     }
