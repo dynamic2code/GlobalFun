@@ -87,6 +87,7 @@ fun Buttons(){
             .padding(24.dp)
             .fillMaxWidth()
     ) {
+        Spacer(modifier = Modifier.height(150.dp))
         Button(onClick = {
             context.startActivity(Intent(context, SignUp::class.java))
 
@@ -102,8 +103,14 @@ fun Buttons(){
                 fontSize = 24.sp,
             )
         }
-        Spacer(modifier = Modifier.height(150.dp))
-        Text(text = "Already have an account with us? click below to log in")
+        Spacer(modifier = Modifier.height(15.dp))
+        Text(
+            text = "Already have an account with us? click below to log in",
+            fontWeight = FontWeight.Bold,
+            textAlign = TextAlign.Center,
+            fontSize = 24.sp
+        )
+        Spacer(modifier = Modifier.height(15.dp))
         Button(onClick = {
             context.startActivity(Intent(context, LogIn::class.java))
         },
@@ -127,7 +134,9 @@ fun Objective(){
     ) {
         Text(
             text = "We help you enjoy all music in the language you know and love",
-
+            fontWeight = FontWeight.Bold,
+            textAlign = TextAlign.Center,
+            fontSize = 24.sp
         )
     }
 

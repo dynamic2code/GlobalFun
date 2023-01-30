@@ -3,11 +3,12 @@ package com.example.globalfun
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
-import androidx.compose.material.TextField
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -80,12 +81,22 @@ fun SearchLyrics(){
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier.fillMaxWidth()
     ) {
-        Box() {
+        Card(
+            shape = RoundedCornerShape(30.dp),
+            elevation = 10.dp,
+            modifier = Modifier.padding(10.dp)
+        ) {
             Row() {
                 TextField(value = searchTerm.value ,
                     onValueChange = {
                         searchTerm.value = it
                     },
+                    leadingIcon = {
+                        Icon(Icons.Filled.Search,
+                            "contentDescription",
+                            modifier = Modifier.clickable { /* .. */})
+                    },
+
                     placeholder = {
                         Text("search",
                             fontSize = 17.sp,
