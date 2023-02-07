@@ -74,7 +74,7 @@ fun Top() {
             textAlign = TextAlign.Center,
             fontSize = 24.sp
         )
-        Spacer(modifier = Modifier.height(150.dp))
+        Spacer(modifier = Modifier.height(screenHeight * 0.2f))
     }
 
 }
@@ -176,7 +176,7 @@ fun Sign_Up(){
             }
 
     }
-        Spacer(modifier = Modifier.height(40.dp))
+        Spacer(modifier = Modifier.height(screenHeight * 0.0533f))
     }
 }
 @Composable

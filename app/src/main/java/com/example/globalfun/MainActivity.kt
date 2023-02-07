@@ -65,7 +65,7 @@ fun TheLogo(){
             .padding(24.dp)
             .fillMaxWidth()
     ) {
-        Spacer(modifier = Modifier.height(150.dp))
+        Spacer(modifier = Modifier.height(screenHeight * 0.2f))
         Text(
             text = "Global Fun",
             fontWeight = FontWeight.Bold,
@@ -96,7 +96,7 @@ fun Buttons(){
             .padding(24.dp)
             .fillMaxWidth()
     ) {
-        Spacer(modifier = Modifier.height(150.dp))
+        Spacer(modifier = Modifier.height(screenHeight * 0.1f ))
         Button(onClick = {
             context.startActivity(Intent(context, SignUp::class.java))
 
