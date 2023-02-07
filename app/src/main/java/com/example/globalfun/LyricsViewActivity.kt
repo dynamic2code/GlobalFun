@@ -14,6 +14,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -53,7 +54,10 @@ fun MainLyrics( content: @Composable () -> Unit){
 
 @Composable
 fun Top4(){
+    val configuration = LocalConfiguration.current
 
+    val screenHeight = configuration.screenHeightDp.dp
+    val screenWidth = configuration.screenWidthDp.dp
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
@@ -74,6 +78,10 @@ fun Top4(){
 }
 @Composable
 fun SearchLyrics(){
+    val configuration = LocalConfiguration.current
+
+    val screenHeight = configuration.screenHeightDp.dp
+    val screenWidth = configuration.screenWidthDp.dp
     val searchTerm = remember {
         mutableStateOf(value = "")
     }
@@ -113,6 +121,10 @@ fun SearchLyrics(){
 }
 @Composable
 fun LyricsSpace(){
+    val configuration = LocalConfiguration.current
+
+    val screenHeight = configuration.screenHeightDp.dp
+    val screenWidth = configuration.screenWidthDp.dp
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier

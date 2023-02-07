@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -54,6 +55,10 @@ fun MainApp( content: @Composable () -> Unit){
 //}
 @Composable
 fun TheLogo(){
+    val configuration = LocalConfiguration.current
+
+    val screenHeight = configuration.screenHeightDp.dp
+    val screenWidth = configuration.screenWidthDp.dp
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
@@ -80,6 +85,10 @@ fun TheLogo(){
 @Composable
 
 fun Buttons(){
+    val configuration = LocalConfiguration.current
+
+    val screenHeight = configuration.screenHeightDp.dp
+    val screenWidth = configuration.screenWidthDp.dp
     val context = LocalContext.current
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -129,6 +138,10 @@ fun Buttons(){
 }
 @Composable
 fun Objective(){
+    val configuration = LocalConfiguration.current
+
+    val screenHeight = configuration.screenHeightDp.dp
+    val screenWidth = configuration.screenWidthDp.dp
     Column(
         verticalArrangement = Arrangement.Bottom
     ) {

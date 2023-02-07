@@ -1,23 +1,24 @@
 package com.example.globalfun
 
 import android.os.Bundle
-import android.widget.NumberPicker.OnValueChangeListener
+//import android.widget.NumberPicker.OnValueChangeListener
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.RoundedCornerShape
+//import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
+//import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.platform.LocalConfiguration
+//import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.input.TextFieldValue
+//import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -25,23 +26,24 @@ import androidx.compose.ui.unit.sp
 import com.example.globalfun.ui.theme.GlobalFunTheme
 
 class SignUp : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            main (){
+            Main {
                 Column (
                     horizontalAlignment = Alignment.CenterHorizontally,
                         ){
-                    top()
-                    signUp()
-                    finishButton()
+                    Top()
+                    Sign_Up()
+                    FinishButton()
                 }
             }
         }
     }
 }
 @Composable
-fun main( content: @Composable () -> Unit){
+fun Main( content: @Composable () -> Unit){
     GlobalFunTheme {
         // A surface container using the 'background' color from the theme
         Surface(
@@ -55,7 +57,11 @@ fun main( content: @Composable () -> Unit){
 }
 
 @Composable
-fun top() {
+fun Top() {
+    val configuration = LocalConfiguration.current
+
+    val screenHeight = configuration.screenHeightDp.dp
+    val screenWidth = configuration.screenWidthDp.dp
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
@@ -74,7 +80,11 @@ fun top() {
 }
 
 @Composable
-fun signUp(){
+fun Sign_Up(){
+    val configuration = LocalConfiguration.current
+
+    val screenHeight = configuration.screenHeightDp.dp
+    val screenWidth = configuration.screenWidthDp.dp
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
@@ -91,7 +101,9 @@ fun signUp(){
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
 
-                modifier = Modifier.fillMaxWidth().padding(24.dp)
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(24.dp)
             ) {
 
                 Text(
@@ -105,22 +117,22 @@ fun signUp(){
                         .padding(10.dp),
                 ) {
 //                the filling details part
-                    val _name = remember {
+                    val userName = remember {
                         mutableStateOf(value = "")
                     }
-                    val _email = remember {
+                    val userEmail = remember {
                         mutableStateOf(value = "")
                     }
-                    val _password = remember {
+                    val userPassword = remember {
                         mutableStateOf(value = "")
                     }
 
 
                     TextField(
 
-                        value = _name.value,
+                        value = userName.value,
                         onValueChange = {
-                            _name.value = it
+                            userName.value = it
                         },
                         placeholder = {
                             Text("Name",
@@ -132,9 +144,9 @@ fun signUp(){
 
                     )
                     TextField(
-                        value = _email.value,
+                        value = userEmail.value,
                         onValueChange ={
-                            _email.value = it
+                            userEmail.value = it
                         },
                         placeholder = {
                             Text("Email",
@@ -146,9 +158,9 @@ fun signUp(){
 
                     )
                     TextField(
-                        value = _password.value ,
+                        value = userPassword.value ,
                         onValueChange ={
-                            _password.value = it
+                            userPassword.value = it
                         },
                         placeholder = {
                             Text("Password",
@@ -168,7 +180,11 @@ fun signUp(){
     }
 }
 @Composable
-fun finishButton(){
+fun FinishButton(){
+    val configuration = LocalConfiguration.current
+
+    val screenHeight = configuration.screenHeightDp.dp
+    val screenWidth = configuration.screenWidthDp.dp
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
@@ -196,11 +212,11 @@ fun finishButton(){
 @Composable
 fun DefaultPreview2() {
     GlobalFunTheme {
-        main (){
+        Main{
             Column {
-                top()
-                signUp()
-                finishButton()
+                Top()
+                Sign_Up()
+                FinishButton()
             }
         }
     }

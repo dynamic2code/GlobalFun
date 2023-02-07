@@ -71,6 +71,10 @@ fun Top3(){
 }
 @Composable
 fun SearchHome(){
+    val configuration = LocalConfiguration.current
+
+    val screenHeight = configuration.screenHeightDp.dp
+    val screenWidth = configuration.screenWidthDp.dp
     val searchTerm = remember {
         mutableStateOf(value = "")
     }
@@ -109,6 +113,10 @@ fun SearchHome(){
 
 @Composable
 fun History(){
+    val configuration = LocalConfiguration.current
+
+    val screenHeight = configuration.screenHeightDp.dp
+    val screenWidth = configuration.screenWidthDp.dp
     Column() {
         Text(text = "History",
             modifier = Modifier.padding(24.dp),
