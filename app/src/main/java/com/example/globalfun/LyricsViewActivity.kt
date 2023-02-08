@@ -3,8 +3,10 @@ package com.example.globalfun
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
@@ -14,7 +16,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -145,6 +149,61 @@ fun LyricsSpace(){
         Text(text = "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.")
     }
 }
+@Composable
+fun ChooseLanguage(){
+    val userLang = remember {
+        mutableStateOf(value = "")
+    }
+    Column() {
+        Row() {
+            Card() {
+                Button(onClick = { /*TODO*/ }) {
+//                    choose language
+                }
+            }
+            Card() {
+                TextField(value = userLang.value, onValueChange = {userLang.value = it} )
+            }
+        }
+        
+    }
+
+}
+@Composable
+fun MusicCover(){
+    Column() {
+//        Image(painter = painterResource(R.drawable.profile_picture),
+//            contentDescription = "Album pic",
+//            modifier = Modifier
+//                // Set image size to 40 dp
+//                .size(40.dp)
+//                // Clip image to be shaped as a circle
+//                .clip(CircleShape))
+    }
+}
+@Composable
+fun Navigation(){
+Column() {
+    Row() {
+        Card() {
+            Button(onClick = { /*TODO*/ }) {
+//                pause
+            }
+        }
+        Card() {
+            Button(onClick = { /*TODO*/ }) {
+//                home
+            }
+        }
+        Card() {
+            Button(onClick = { /*TODO*/ }) {
+//                play
+            }
+        }
+    }
+}
+}
+
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview5() {
