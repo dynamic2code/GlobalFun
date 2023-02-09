@@ -172,19 +172,21 @@ fun ChooseLanguage(){
 @Composable
 fun MusicCover(){
     Column() {
-//        Image(painter = painterResource(R.drawable.profile_picture),
-//            contentDescription = "Album pic",
-//            modifier = Modifier
-//                // Set image size to 40 dp
-//                .size(40.dp)
-//                // Clip image to be shaped as a circle
-//                .clip(CircleShape))
+        Image(painter = painterResource(R.drawable),
+            contentDescription = "Album pic",
+            modifier = Modifier
+                // Set image size to 40 dp
+                .size(40.dp)
+                // Clip image to be shaped as a circle
+                .clip(CircleShape))
     }
 }
 @Composable
 fun Navigation(){
 Column() {
-    Row() {
+    Row(
+        modifier = Modifier.padding(25.dp)
+    ) {
         Card() {
             Button(onClick = { /*TODO*/ }) {
 //                pause
