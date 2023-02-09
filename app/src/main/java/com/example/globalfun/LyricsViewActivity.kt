@@ -26,6 +26,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.globalfun.ui.theme.GlobalFunTheme
+import java.io.File
 
 class LyricsViewActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -171,14 +172,15 @@ fun ChooseLanguage(){
 }
 @Composable
 fun MusicCover(){
+    val image = File("")
     Column() {
-        Image(painter = painterResource(R.drawable),
-            contentDescription = "Album pic",
-            modifier = Modifier
-                // Set image size to 40 dp
-                .size(40.dp)
-                // Clip image to be shaped as a circle
-                .clip(CircleShape))
+//        Image(painter = image,
+//            contentDescription = "Album pic",
+//            modifier = Modifier
+//                // Set image size to 40 dp
+//                .size(40.dp)
+//                // Clip image to be shaped as a circle
+//                .clip(CircleShape))
     }
 }
 @Composable
