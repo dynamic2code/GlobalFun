@@ -153,29 +153,29 @@ fun LyricsSpace(){
             )
             Text(text = "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.")
         }
-        val userLang = remember {
-            mutableStateOf(value = "")
-        }
-//        language column
-        Column(
-            modifier = Modifier.background(Color.Blue)
-        ) {
-            Row() {
-                Card() {
-                    Button(onClick = { /*TODO*/ }) {
-//                    choose language
-                    }
-                }
-                Card() {
-                    TextField(value = userLang.value, onValueChange = {userLang.value = it} )
-                }
-            }
-
-        }
-        val image = File("")
-        Column(
-            modifier = Modifier.background(Color.Cyan)
-        ) {
+//        val userLang = remember {
+//            mutableStateOf(value = "")
+//        }
+////        language column
+//        Column(
+//            modifier = Modifier.background(Color.Blue)
+//        ) {
+//            Row() {
+//                Card() {
+//                    Button(onClick = { /*TODO*/ }) {
+////                    choose language
+//                    }
+//                }
+////                Card() {
+////                    TextField(value = userLang.value, onValueChange = {userLang.value = it} )
+////                }
+//            }
+//
+//        }
+//        val image = File("")
+//        Column(
+//            modifier = Modifier.background(Color.Cyan)
+//        ) {
 //        Image(painter = image,
 //            contentDescription = "Album pic",
 //            modifier = Modifier
@@ -183,34 +183,52 @@ fun LyricsSpace(){
 //                .size(40.dp)
 //                // Clip image to be shaped as a circle
 //                .clip(CircleShape))
-        }
+//        }
 
 //        bottom navigator
-        Column(
-            modifier = Modifier.background(Color.Yellow).width(screenWidth),
-            verticalArrangement = Arrangement.Bottom
-        )
-        {
 
-            Row() {
-                Card() {
-                    Button(onClick = { /*TODO*/ }) {
-//                pause
-                    }
-                }
-                Card() {
-                    Button(onClick = { /*TODO*/ }) {
-//                home
-                    }
-                }
-                Card() {
-                    Button(onClick = { /*TODO*/ }) {
-//                play
-                    }
-                }
-            }
-        }
+//        Column(
+//            modifier = Modifier
+//                .background(Color.Yellow)
+//                .width(screenWidth),
+//            verticalArrangement = Arrangement.Bottom,
+//        )
+//        {
+//
+//            Row() {
+//
+//                Card() {
+//                    Button(onClick = { /*TODO*/ }) {
+////                pause
+//                    }
+//                }
+//                Card() {
+//                    Button(onClick = { /*TODO*/ }) {
+////                home
+//                    }
+//                }
+//                Card() {
+//                    Button(onClick = { /*TODO*/ }) {
+////                play
+//                    }
+//                }
+//
+//
+//            }
+//        }
 
+
+    }
+
+}
+@Composable
+fun Bottom(){
+    val configuration = LocalConfiguration.current
+    val screenWidth = configuration.screenWidthDp.dp
+    Box(
+        modifier = Modifier.height(screenWidth),
+//        contentAlignment = Alignment.Bottom
+    ) {
 
     }
 
