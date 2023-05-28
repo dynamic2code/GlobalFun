@@ -15,4 +15,4 @@ The global fun is a music app that helps you translate any music to the language
  notyfy on new music from related genere & artist
  remember where you left off
  voice command 
- 
+ show down, competting parties with voting 
